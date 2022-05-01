@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import Loginform from './Loginform';
 import Displaymovies from './Displaymovies';
 
+
+
+//import 'bootstrap/dist/css/boostrap.min.css';
+
 //import DetailsPage from './components/DetailsPage';
 
 function App() {
@@ -71,8 +75,9 @@ function App() {
         <h4> - Pragna Mallikarjuna Swamy  - Tanmaya Prakash</h4>
       </div>
       <div className='blank'></div>
+         
   </div>
-      
+  
   );
 }
 

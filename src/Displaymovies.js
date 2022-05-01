@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
+//import AddFavourites from './AddFavourites';
+
 
 function Displaymovies() {
 
 const API_URL = "https://api.themoviedb.org/3";
+//const IMAGE_PATH= " https://image.tmdb.org/t/p/w500"
   const [movies, setMovies] = useState([]);
+  //const [favourites, setFavourites] = useState([]);
   const [searchKey, setSearchKey] = useState("");
 
   const fetchMovies = async(searchKey) => {
@@ -25,22 +29,37 @@ const API_URL = "https://api.themoviedb.org/3";
     fetchMovies();
   }, [])
 
-  const renderMovies = () => (
-    movies.map(movie => (
-      <MovieCard
-        key= {movie.id}
-        movie = {movie}
-      />
-    ))
-  )
+ 
+  // const renderMovies = () => (
+  //    movies.map(movie => ( 
+  //       key= {movie.id}
+  //       movie = {movie}
+       
+  // ))
+
+
+  // const addFavouriteMovie = (movie) => {
+  //   const newFavouriteList= [...favourites, movie];
+  //   setFavourites(newFavouriteList);
+  // }
+
+  // const renderFavMovies = () => (
+    
+  //   favourites.map(movie=> (
+  //     <MovieCard
+  //       key= {movie.id}
+  //       movie = {movie}
+  //     /> 
+     
+  // ))
+  // )
 
 const searchMovies = (e) => {
   e.preventDefault();
   fetchMovies(searchKey);
-
-
 }
-
+//<MovieCard movies={movies} handleFavouritesClick={addFavouriteMovie}/> 
+//<MovieCard movies={favourites}/>
   return (
         <div>
           <div className='header'>
@@ -53,11 +72,13 @@ const searchMovies = (e) => {
               </form>
             </div>
           </div>
-          <div className='container max-center'>
-            {renderMovies()}
+          <div className='container row max-center'>
+            {/* {renderMovies()} */}
+            <MovieCard movies={movies}
+            />
           </div>
         </div>
       );
     }
 
-export default Displaymovies
+export default Displaymovies;
