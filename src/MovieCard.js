@@ -48,10 +48,11 @@ const handleRecommendationsClick=async(id) =>
              <div onClick= {()=> {openModal(); handleRecommendationsClick(movie.id)}} className= 'overlay align-items-center justify-content-center'>
                   {/* <div className='overlay align-items-center justify-content-center'> */}
                   <AddFavourites/>
-              </div>
-              <div className='container-recommend'>
+                  <div className='container-recommend'>
                   {showRecommendations ? <Recommendations  recommender= {recommendations} setShowRecommendations={setShowRecommendations} /> : null}
               </div>
+              </div>
+              
                   {/* </div> */}
              
                   {/* <div className='container row max-center'>
@@ -60,7 +61,9 @@ const handleRecommendationsClick=async(id) =>
               
           </div> 
           <h5 className='movie-title'>{movie.title}</h5> 
+          
         </div> 
+
         
      ))}   
     </>
