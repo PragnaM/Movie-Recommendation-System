@@ -248,7 +248,7 @@ form .form-inner input[type='submit']:hover, .welcome button:hover{
  
 }
 .movie-cover-recommendations {
-  width: 70%;
+  width: 60%;
  
 }
 
@@ -260,12 +260,13 @@ form .form-inner input[type='submit']:hover, .welcome button:hover{
 .image-container-recommend{
   position: relative;
   transition: transform 0.2s;
+  
 }
 
-/* .image-container:hover {
+.image-container:hover {
   cursor: pointer;
   transform: scale(1.1);
-} */
+}
 
 .image-container:hover .overlay{
   opacity:2;
@@ -360,7 +361,7 @@ form .form-search button {
   padding: 20px;
   justify-content: space-between;
   align-items: center;
-  margin-left: 700px;
+  margin-left: 650px;
   border-radius: 8px;
   background-image: linear-gradient( to bottom right, #ffff00, #2c2b0b);
   background-size: 200%;
@@ -386,16 +387,20 @@ form .form-search button {
 
 .modal {
   z-index: 1;
-  width: 200px;
-  height: 200px;
-  background: white;
-  display: flex;
+  max-width: 1000px;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
   position: relative;
-  color:black;
+  display:flex;
   animation: animate 0.3s;
+  display:grid;
+  gap: 15px;
+  color: white;
+  background-color: #f5f5f5;
+  opacity: 2;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 15px;
 }
 .modal-button {
   position: absolute;
@@ -418,4 +423,19 @@ form .form-search button {
   to {
     transform: scale(1);
   }
+}
+
+.display-button {
+  display: block;
+  padding: 20px;
+  border-radius: 8px;
+  background-image: linear-gradient( to bottom right, #ffff00, #2c2b0b);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 200px
 }

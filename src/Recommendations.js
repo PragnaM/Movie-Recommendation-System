@@ -19,27 +19,16 @@ export const Recommendations =(props) => {
     
 
 return (
-    <>
-    {props.recommender.map((movie,index) => (
-        <div className="conatiner-modal" ref={modalRef} onClick={closeModal}>
-        
+        <div className="" ref={modalRef} onClick={closeModal}>
         {/* <h2>This is a Modal</h2> */}
-            <div>
-            <div className="modal">
-              <div className ='image-container-recommend'>
-               <img className ={'movie-cover-recommendations'} 
-               src = {`${IMAGE_PATH}${movie.poster_path}`} alt= '' /> 
-              </div>
+            <div className="modal max-center">
+            {props.recommender.map((movie,index) => (
+                <div className ='image-container-recommend'>
+                    <img className ={'movie-cover-recommendations'} src = {`${IMAGE_PATH}${movie.poster_path}`} alt= '' /> 
               <h5 className='movie-title-recommend'>{movie.title}</h5> 
-              </div> 
-        <button  className="modal-button" onClick={() => props.setShowRecommendations(false)}>X</button>
+              </div>  ))}
+        <div  className="modal-button" onClick={() => props.setShowRecommendations(false)}>X</div>
         </div>
-      </div>
-         
-        ))}
-    </>
-    
+      </div>  
   );
-    }
-
- //export default Recommendations;
+            }

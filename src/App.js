@@ -14,13 +14,17 @@ function App() {
     email:"admin@admin.com",
     password: "admin123"
   }
+  const user1 ={
+    email:"anne@gmail.com",
+    password: "anne123"
+  }
 
   const [user, setUser] = useState({name: "", email:""});
   const [error, setError] = useState("");
 
   const Login = details => {
     console.log(details);
-    if (details.email === adminUser.email && details.password === adminUser.password)
+    if ((details.email === adminUser.email && details.password === adminUser.password) || (details.email === user1.email && details.password === user1.password))
     {
       console.log("Logged In");
       setUser({

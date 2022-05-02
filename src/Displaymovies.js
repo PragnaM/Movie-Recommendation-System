@@ -72,7 +72,7 @@ const searchMovies = (e) => {
               </form>
             </div>
           </div>
-          <div className='container row max-center'>
+          <div >
             {/* {renderMovies()} */}
             <MovieCard movies={movies}
             />
