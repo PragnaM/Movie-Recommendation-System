@@ -1,11 +1,11 @@
-Movie Recommendation System 
+# Movie Recommendation System 
 
 A movie recommendation system is a system/model that predicts the user’s preference and displays a set of recommended movies. The system has 3 pages/screens:
 1. Login Page
 2. Display Movies Page (Top 25 movies)
 3. Display Recommended Movies (based on a specific movie)
 
-Steps to run the project:
+# Steps to run the project:
 1. Download the project folder
 2. In your terminal, go to the project folder
 3. Type "npm start" - This should open the project in the browser
