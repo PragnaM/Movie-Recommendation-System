@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+//Display login form for the user to enter credentials.
 function Loginform({Login, error}) {
     const [details, setDetails] = useState({name:"", email:"", password:""});
 

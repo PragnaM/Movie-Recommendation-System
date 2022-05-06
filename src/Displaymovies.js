@@ -1,17 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
-//import AddFavourites from './AddFavourites';
 
-
+//fetch corresponding movies based on a search value or most popular 
+//By making API call to TMDB API
 function Displaymovies() {
 
 const API_URL = "https://api.themoviedb.org/3";
-//const IMAGE_PATH= " https://image.tmdb.org/t/p/w500"
   const [movies, setMovies] = useState([]);
-  //const [favourites, setFavourites] = useState([]);
   const [searchKey, setSearchKey] = useState("");
 
+  
   const fetchMovies = async(searchKey) => {
     const type = searchKey ? "search" : "discover" 
     const {data : {results}} = await axios.get(`${API_URL}/${type}/movie`, {
@@ -29,37 +28,11 @@ const API_URL = "https://api.themoviedb.org/3";
     fetchMovies();
   }, [])
 
- 
-  // const renderMovies = () => (
-  //    movies.map(movie => ( 
-  //       key= {movie.id}
-  //       movie = {movie}
-       
-  // ))
-
-
-  // const addFavouriteMovie = (movie) => {
-  //   const newFavouriteList= [...favourites, movie];
-  //   setFavourites(newFavouriteList);
-  // }
-
-  // const renderFavMovies = () => (
-    
-  //   favourites.map(movie=> (
-  //     <MovieCard
-  //       key= {movie.id}
-  //       movie = {movie}
-  //     /> 
-     
-  // ))
-  // )
-
 const searchMovies = (e) => {
   e.preventDefault();
   fetchMovies(searchKey);
 }
-//<MovieCard movies={movies} handleFavouritesClick={addFavouriteMovie}/> 
-//<MovieCard movies={favourites}/>
+
   return (
         <div>
           <div className='header'>
@@ -73,7 +46,6 @@ const searchMovies = (e) => {
             </div>
           </div>
           <div >
-            {/* {renderMovies()} */}
             <MovieCard movies={movies}
             />
           </div>

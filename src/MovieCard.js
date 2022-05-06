@@ -2,8 +2,10 @@ import React, {useEffect, useState, useRef} from 'react';
 import axios from 'axios';
 import {Recommendations} from './Recommendations';
 import AddFavourites from './AddFavourites';
-//import Recommendations from './Recommendations';
-//import AddFavourites from './AddFavourites';
+
+// Fetch Movie details from the TMDB API and display on the screen, 
+//if user clicks view Recommendations,
+// send recommendations list to Recommendations.js to display recommended movies
 
 const MovieCard = (props) => {
 const IMAGE_PATH= " https://image.tmdb.org/t/p/w500"
@@ -20,13 +22,10 @@ const closeModal = (e) => {
     setShowButton(false);
   }
 }
-//const FavouriteComponent = props.favouriteComponent;
-
 
 const handleRecommendationsClick=async(id) =>
 {
   console.log(id);
-  //<Recommendations movieid ={id}/>
     const {data : {results}} = await axios.get(`${API_URL}/${id}/recommendations`, {
       params:
       {
@@ -62,7 +61,6 @@ const handleRecommendationsClick=async(id) =>
   <button className = 'display-button max-center' ref={modalRef} onClick={closeModal}> Display Movies </button> : null}
   {showMovies ?
   <div className='container max-center'>  
-    {/* <div className ='align-items-center'> */}
           {props.movies.map((movie,index) => (
           <div className={'moviecard'}>
             <div className ='image-container d-flex align-items-center m-3'>
@@ -70,9 +68,6 @@ const handleRecommendationsClick=async(id) =>
            src = {`${IMAGE_PATH}${movie.poster_path}`} alt= '' 
             /> 
              <div classname ="recommend-button" onClick= {()=> {openModal(); handleRecommendationsClick(movie.id);}} >
-             {/* if ({setShowRecommendations} = true) {
-
-             } */}
                 <div className='overlay align-items-center justify-content-center '>
                   <AddFavourites/>
                   </div>
@@ -83,10 +78,7 @@ const handleRecommendationsClick=async(id) =>
                   </div>
                    ))}
           </div> : null}
-          </div> 
-          
-          {/* </div> */}
-          
+          </div>    
        </>
         
         )}

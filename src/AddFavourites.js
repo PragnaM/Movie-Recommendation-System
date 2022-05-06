@@ -1,5 +1,5 @@
 import React from 'react';
-
+//View Recommendations button, note: file name not changed
 const AddFavourites = () => {
     return (
             <>

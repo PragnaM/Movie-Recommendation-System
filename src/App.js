@@ -2,12 +2,9 @@ import React, {useState} from 'react';
 import Loginform from './Loginform';
 import Displaymovies from './Displaymovies';
 
-
-
-//import 'bootstrap/dist/css/boostrap.min.css';
-
-//import DetailsPage from './components/DetailsPage';
-
+//Main function
+ // On successful login, the user sees the Display Movies Page,
+  // or sees the Login Page with the alert "Enter Valid Credentials"
 function App() {
 
   const adminUser ={
@@ -45,6 +42,7 @@ function App() {
       email:""
     });
   }
+
 
   return (
     <div className="App">
